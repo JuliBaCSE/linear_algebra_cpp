@@ -85,13 +85,12 @@ std::vector<VarType> operator*(const std::vector<std::vector<VarType> > &A, cons
 }
 
 //Test function
-bool testMatrixVectorProduct(const std::vector<int> &vec){
-    std::vector<int> reference = {1,-3};
+bool testMatrixVectorProduct(const std::vector<int> &vec, const std::vector<int>&ref){
 
     for(auto i = 0; i<vec.size();i++){
-        if(vec[i]!= reference[i]){
+        if(vec[i]!= ref[i]){
             std::cout << "There seems to be an error" << std::endl;
-            printColVec(reference);
+            printColVec(ref);
             printColVec(vec);
 
             return false;
@@ -110,7 +109,7 @@ int main() {
     //vectorMatrixProduct(A,v);
 
     printColVec(A*v);
-
-    testMatrixVectorProduct(A*v);
+    std::vector<int> ref = {1 , -3};
+    testMatrixVectorProduct(A*v,ref);
     return 0;
 }
