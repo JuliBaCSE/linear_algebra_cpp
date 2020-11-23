@@ -68,8 +68,8 @@ template<typename VarType>
 std::vector<VarType> operator*(const std::vector<std::vector<VarType> > &A, const std::vector<VarType> &v){
     
     //check num col
-    
-    assert(A[0].size()== v.size());
+    auto N = v.size();
+    assert(N == A[0].size());
     std::vector<VarType>results;
     VarType result = 0;
     for (auto &row: A) {
