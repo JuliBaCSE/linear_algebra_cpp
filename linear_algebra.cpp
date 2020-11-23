@@ -31,11 +31,7 @@ void printMatrix(const std::vector<std::vector<VarTypeMa> > & A)
     std::cout << "[" << std::endl;
     for (const auto & row : A)
     {
-        for (const auto & elem : row)
-        {
-            std::cout << elem << " ";
-        }
-        std::cout << std::endl;
+        printRowVec(row);
     }
     std::cout << "]" << std::endl;
 }
@@ -109,6 +105,7 @@ int main() {
 
     std::vector<std::vector<int> > A = { {1 , -1, 2},
                                         {0 ,-3, 1}};
+    printMatrix(A);
     std::vector<int> v = { 2, 1,0};
     //vectorMatrixProduct(A,v);
 
